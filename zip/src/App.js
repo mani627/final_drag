@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import Draggable from "react-draggable";
 import { Resizable } from "react-resizable";
 import Xarrow from "react-xarrows";
@@ -11,18 +11,11 @@ const App = () => {
   const [tablePositions, setTablePositions] = useState({});
   const [droppedTables, setDroppedTables] = useState([]);
   const [connecting, setConnecting] = useState(false);
-  const [updateArrows, setUpdateArrows] = useState(false);
 
   useEffect(() => {
-    const zoomContainer = document.getElementById("right-panel");
-    const contentcollection =document.getElementsByClassName("table");
-
-    let scale = 1;
-
     if (droppedTables.length === mockTables.length) {
       alert("All tables are dragged");
     }
-
   }, [droppedTables]);
 
   const handleStop = (e, data, tableId) => {
@@ -103,8 +96,6 @@ const App = () => {
           [table.id]: adjustedPosition,
           length: table?.columns?.length,
         }));
-      } else {
-        alert("Already existing Table");
       }
     }
   };
@@ -129,25 +120,6 @@ const App = () => {
     );
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setUpdateArrows((prev) => !prev);
-    };
-
-    const scrollableTables = document.querySelectorAll(".table");
-
-    scrollableTables.forEach((table) => {
-      table.addEventListener("scroll", handleScroll);
-    });
-
-    return () => {
-      scrollableTables.forEach((table) => {
-        table.removeEventListener("scroll", handleScroll);
-      });
-    };
-  }, [droppedTables]);
-
-  console.log("kmkm", updateArrows);
   return (
     <div className="app">
       <div className="left-panel">
@@ -164,25 +136,9 @@ const App = () => {
               {table.name}
             </li>
           ))}
-          <br />
-          <br />
-          <br />
-          <br />
-
-          <li
-            style={{
-              width: "50%",
-              textAlign: "center",
-              background: "#F4C64Eff",
-              border: "none",
-            }}
-          >
-            Add
-          </li>
         </ul>
       </div>
       <div
-        id="right-panel"
         className="right-panel"
         onDrop={handleDrop}
         onDragOver={(e) => e.preventDefault()}
@@ -205,7 +161,7 @@ const App = () => {
               }}
               draggableOpts={{ disabled: connecting }} // Disable dragging while resizing
             >
-              <div className="scrollable-table">
+              <div>
                 <Table
                   tableId={table.id}
                   tableName={table.name}
@@ -224,7 +180,7 @@ const App = () => {
             start={conn.start}
             end={conn.end}
             animateDrawing={1}
-            // updateKey={updateArrows} // Force update on scroll
+
             // startAnchor="right"
             // endAnchor="left"
           />

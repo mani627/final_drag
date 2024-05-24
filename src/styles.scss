@@ -1,0 +1,139 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f0f0f0;
+}
+
+.app {
+  position: relative;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+h3 {
+  margin: 0 0 10px 0;
+  padding: 0;
+  margin: 0 0 10px 0;
+  padding: 0;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+li {
+  padding: 8px;
+  margin-bottom: 5px;
+  background: #FDFAF5ff;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 8px;
+  margin-bottom: 5px;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.left-panel {
+  width: 20%;
+  background: #707C8Aff;
+  border-right: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-height: 100vh;
+  overflow-x: auto;
+}
+
+.right-panel {
+  position: relative;
+  flex: 1;
+  overflow-y: hidden;
+}
+
+.table {
+  background: #ADCAD0ff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  width: 200px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  resize: both;
+  overflow: auto;
+  -webkit-resize: both; /* For older versions of Chrome */
+  -moz-resize: both; /* For older versions of Firefox */
+  box-sizing: border-box;
+  height: 200px;
+  color: #FEFEFEff;
+}
+
+.table_header {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px;
+  align-items: center;
+}
+
+input[type="text"] {
+  width: calc(100% - 20px);
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+
+/* CSS HEX */
+// --seasalt: #F8F6F5ff;
+// --paynes-gray: #545E68ff;
+// --platinum: #E5E5E6ff;
+// --slate-gray: #707C8Aff;
+// --air-superiority-blue: #6C9AADff;
+
+
+// --columbia-blue: #C2D5E4ff;
+// --white: #FEFEFEff;
+// --ash-gray: #C1D0D2ff;
+// --slate-gray: #707C8Aff;
+// --snow: #FCF4F2ff;
+
+// --isabelline: #F2EFEDff;
+// --columbia-blue: #C2D5E4ff;
+// --saffron: #F4C64Eff;
+// --seasalt: #F8F6F5ff;
+// --ash-gray: #C1D0D2ff;
+
+
+// --light-blue: #ADCAD0ff;
+// --paynes-gray: #5D6E7Fff;
+// --white: #FFFFFFff;
+// --ash-gray: #C1D0D2ff;
+// --isabelline: #F2EFEDff;
+
+
+// --white: #FEFEFEff;
+// --battleship-gray: #858E95ff; l
+// --platinum: #E5E5E6ff; r
+// --baby-powder: #FDFAF5ff; list
+// --light-blue: #ADCAD0ff; cr  #C2D5E4ff
+//button - #F4C64Eff
